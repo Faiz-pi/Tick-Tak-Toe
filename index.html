@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tick Tak Toe</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -15,15 +15,19 @@
       <div class="message">
         <p>
           Let's play <br />
-          Tick-Tak-Toe
+          Tick-Tac-Toe
         </p>
         <button class="start-btn">Start new game</button>
       </div>
 
       <div class="game">
         <div class="names">
-          <input type="radio" name="Player" id="x" />Player X
-          <input type="radio" name="Player" id="o" />Player O
+          <div class="player">
+            <input type="radio" name="Player" id="x" checked/>Player X
+          </div>
+          <div class="player">
+            <input type="radio" name="Player" id="o" />Player O
+          </div>
         </div>
 
         <div class="game-center">
@@ -39,12 +43,10 @@
         </div>
 
         <div class="winner-message">
-            <p class="winner-text">Player X is the winner</p>
+          <p class="winner-text">Player X is the winner</p>
         </div>
       </div>
     </section>
-
-    <footer>Made by Faiz</footer>
 
     <script defer src="script.js"></script>
   </body>
