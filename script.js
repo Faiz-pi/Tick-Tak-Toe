@@ -1,6 +1,8 @@
 let playerX = document.getElementById("x");
 let playerO = document.getElementById("o");
 
+let winnerMessage = document.getElementsByClassName("winner-message");
+
 const winPatterns = [
   [0, 1, 2],
   [3, 4, 5],
@@ -43,7 +45,8 @@ inputs.forEach((input) => {
         inputs[b].value === symbol &&
         inputs[c].value === symbol
       ) {
-        console.log(`Player ${symbol} wins`);
+        winnerMessage[0].innerHTML = `Player ${symbol} wins!`;
+
         inputs.forEach((input) => {
           input.setAttribute("disabled", "disabled");
         });
@@ -51,7 +54,20 @@ inputs.forEach((input) => {
     });
 
     if (fillCount === 9) {
-      console.log("Its a draw");
+      winnerMessage[0].innerHTML = "It's a draw!";
     }
   });
 });
+
+function newGame() {
+  inputs.forEach((input) => {
+    input.value = "";
+    input.style.backgroundColor = "transparent";
+    input.removeAttribute("disabled");
+  });
+  playerO.removeAttribute("checked");
+  playerX.setAttribute("checked", "checked");
+  winnerMessage[0].innerHTML = "";
+
+  fillCount = 0;
+}

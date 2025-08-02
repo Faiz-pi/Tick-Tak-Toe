@@ -114,3 +114,24 @@ input[type="text"]:focus {
   outline: none;
   background-color: whitesmoke;
 }
+
+/* Small devices (phones, 0–599px) */
+@media (max-width: 599px) {
+  section{
+    flex-direction: column;
+  }
+  header{
+    margin-left: 0.5rem;
+  }
+  
+}
+
+/* Medium devices (tablets, 600px–899px) */
+@media (min-width: 600px) and (max-width: 899px) {
+  section{
+    flex-direction: column;
+  }
+  header{
+    margin-left: 1rem;
+  }
+}
